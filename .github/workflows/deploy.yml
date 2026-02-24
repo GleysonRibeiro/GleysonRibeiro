@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Listar arquivos modificados após checkout (debug)
+        run: find . -type f -printf '%T@ %p\n' | sort -n | tail -20
       - name: Listar conteúdo de next.config.js (debug)
         run: |
           if [ -f next.config.js ]; then
