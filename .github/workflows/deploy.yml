@@ -15,8 +15,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Listar conteúdo de next.config.js (debug)
+        run: |
+          if [ -f next.config.js ]; then
+            echo "Arquivo next.config.js existe. Conteúdo:" && cat next.config.js
+          else
+            echo "Arquivo next.config.js não existe."
+          fi
       - name: Remover next.config.js se existir
         run: rm -f next.config.js
+      - name: Confirmar remoção de next.config.js (debug)
+        run: |
+          if [ -f next.config.js ]; then
+            echo "Falha ao remover next.config.js!" && cat next.config.js
+          else
+            echo "next.config.js removido com sucesso."
+          fi
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
