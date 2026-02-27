@@ -1,24 +1,20 @@
-import {Github, Linkedin, MessageCircle} from 'lucide-react';
+import {Github, Linkedin, MessageCircle, Mail, Phone} from 'lucide-react';
 
 export default function Footer() {
   return (
     <footer className="bg-[#0a0c10] border-t border-slate-800 py-12 px-4 md:px-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        
         {/* Coluna 1: Bio Rápida */}
         <div className="space-y-4">
-          <div className="font-bold text-white">Gleyson Ribeiro</div>
+          <div className="font-bold text-white text-lg">Gleyson Ribeiro</div>
           <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
-            Bacharel em Sistemas de Informação focado em criar soluções escaláveis e gestão operacional eficiente.
+            Bacharel em Sistemas de Informação, com conhecimentos em desenvolvimento de software nas linguagens Python, Java, JavaScript e C, além do uso do framework Spring, plataformas no code como Bubble.io, integração de sistemas, automação e lógica de programação. Perfil analítico, visão de processos, comunicação clara e foco contínuo na solução de problemas.
           </p>
         </div>
 
         {/* Coluna 2: Navegação rápida */}
         <div className="grid grid-cols-2 gap-4 text-sm">
-          <div className="flex flex-col gap-2">
-            <span className="text-white font-semibold">Explorar</span>
-            <a href="#" className="text-slate-400 hover:text-white">Estudos de Caso</a>
-            <a href="#" className="text-slate-400 hover:text-white">Blog</a>
-          </div>
           <div className="flex flex-col gap-4">
             <span className="text-white font-semibold text-sm uppercase tracking-wider">Conectar</span>
             <a 
@@ -53,8 +49,15 @@ export default function Footer() {
 
         {/* Coluna 3: Contato Direto */}
         <div className="text-sm space-y-2">
-          <span className="text-white font-semibold block">Contato</span>
-          <p className="text-slate-400 italic">Macaé, Rio de Janeiro</p>
+          <span className="text-white font-semibold text-sm uppercase tracking-wider block">Contatos</span>
+          <p className="text-slate-400 italic">
+            <Mail size={18} />
+            E-mail: ribeiro.gleyson@gmail.com
+          </p>
+          <p className="text-slate-400 italic">
+            <Phone size={18} />
+            Telefone: (22) 99766-0134
+          </p>
         </div>
       </div>
 
