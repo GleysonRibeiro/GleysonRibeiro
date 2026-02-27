@@ -42,7 +42,7 @@ export default function Footer() {
               <span className="truncate">ribeiro.gleyson@gmail.com</span>
             </p>
             <p className="text-slate-400 italic flex items-center gap-2">
-              <Phone size={18} className="text-blue-500 shrink-0" /> 
+              <Phone size={18} className="shrink-0" /> 
               <span>(22) 99766-0134</span>
             </p>
           </div>
