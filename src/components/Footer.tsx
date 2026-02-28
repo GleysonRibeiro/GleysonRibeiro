@@ -10,7 +10,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-[#0a0c10] border-t border-slate-800 py-12 px-4 md:px-8">
+    <footer id="contato" className="bg-[#0a0c10] border-t border-slate-800 py-12 px-4 md:px-8">
       {/* Container Pai com Grid de 12 colunas no Desktop */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8">
   
