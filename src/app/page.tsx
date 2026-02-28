@@ -1,6 +1,7 @@
 import { Download, Github, ArrowRight, Code, Database, Layout as LayoutIcon } from 'lucide-react';
 import Link from 'next/link';
 import NextImage from 'next/image';
+import fotoPerfil from '../../public/images/foto-perfil.jpg';
 
 export default function Home() {
   return (
@@ -42,21 +43,24 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Lado Direito: Foto/Card*/}
+       {/* Lado Direito: Foto/Card */}
         <div className="lg:col-span-5 relative group">
+          {/* Efeito de brilho (Glow) de fundo */}
           <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-          <div className="relative bg-[#0d1117] border border-slate-800 rounded-3xl p-2 overflow-hidden aspect-square flex items-center justify-center">
-             <div className="relative bg-[#0d1117] border border-slate-800 rounded-3xl p-2 overflow-hidden aspect-square flex items-center justify-center">
-              <NextImage 
-                src="public/foto-perfil.jpg" 
-                alt="Foto de Gleyson Ribeiro"
-                fill
-                className="object-cover rounded-2xl grayscale hover:grayscale-0 transition-all duration-500"
-                priority
-              />
-            </div>
+          
+          {/* Container da Imagem */}
+          <div className="relative bg-[#0d1117] border border-slate-800 rounded-3xl p-2 overflow-hidden aspect-square">
+            <NextImage 
+              src={fotoPerfil}
+              alt="Foto de Gleyson Ribeiro"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw" 
+              className="object-cover rounded-2xl grayscale hover:grayscale-0 transition-all duration-500"
+              priority
+            />
           </div>
         </div>
+
       </section>
 
       {/* --- RESUMO PROFISSIONAL --- */}

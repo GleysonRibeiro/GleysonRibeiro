@@ -1,6 +1,14 @@
+'use client';
 import {Github, Linkedin, MessageCircle, Mail, Phone} from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 export default function Footer() {
+  const [year, setYear] = useState<number | string>('...');
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="bg-[#0a0c10] border-t border-slate-800 py-12 px-4 md:px-8">
       {/* Container Pai com Grid de 12 colunas no Desktop */}
