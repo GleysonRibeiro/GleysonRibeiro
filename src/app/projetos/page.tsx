@@ -3,19 +3,11 @@
 import { Github, ExternalLink, Code2, Layers, Cpu } from 'lucide-react';
 import NextImage from 'next/image';
 import Link from 'next/link';
+import data from '@/data/config.json';
+import foto from '../../../public/images/projetos/portfolio.png';
+
 
 export default function Projetos() {
-  const projetos = [
-    {
-      titulo: "Portfólio Profissional v1.0",
-      descricao: "Desenvolvimento de um ecossistema digital para centralizar minha trajetória em Gestão Operacional e Engenharia de Software. Focado em performance, SEO e acessibilidade.",
-      tech: ["Next.js 16", "Tailwind CSS", "TypeScript", "Lucide Icons"],
-      github: "https://github.com/GleysonRibeiro/portfolio",
-      demo: "/",
-      imagem: "/images/projeto-portfolio.jpg" // Você pode tirar um print do site depois!
-    }
-  ];
-
   return (
     <div className="max-w-6xl mx-auto py-12 px-6 space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
       
@@ -24,20 +16,25 @@ export default function Projetos() {
           Meus <span className="text-blue-500">Projetos</span>
         </h1>
         <p className="text-slate-400 max-w-2xl">
-          Uma vitrine das soluções técnicas que desenvolvi, unindo a lógica de programação à eficiência operacional.
+          Soluções técnicas que desenvolvi, unindo a lógica de programação à problemas reais.
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {projetos.map((proj, index) => (
+        {data.projetos.map((proj, index) => (
           <div key={index} className="group relative bg-[#0d1117] border border-slate-800 rounded-3xl overflow-hidden hover:border-blue-500/50 transition-all duration-500">
             
             {/* Preview da Imagem */}
             <div className="relative h-64 w-full bg-slate-900 overflow-hidden">
               <div className="absolute inset-0 bg-blue-600/10 group-hover:bg-transparent transition-colors z-10"></div>
-              {/* Fallback caso não tenha a imagem ainda */}
-              <div className="flex items-center justify-center h-full text-slate-700">
-                <Cpu size={64} className="group-hover:scale-110 group-hover:text-blue-500 transition-all duration-500" />
+              
+              <div className="relative h-64 w-full overflow-hidden">
+                <NextImage 
+                  src={proj.imagem} 
+                  alt={`Imagem do projeto ${proj.titulo}`} 
+                  fill 
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
             </div>
 
@@ -77,7 +74,7 @@ export default function Projetos() {
           </div>
           <div>
             <h3 className="text-lg font-bold text-white">Novo Projeto em breve</h3>
-            <p className="text-sm text-slate-500">Desenvolvendo soluções em Python e Bubble.io.</p>
+            <p className="text-sm text-slate-500"></p>
           </div>
         </div>
       </div>

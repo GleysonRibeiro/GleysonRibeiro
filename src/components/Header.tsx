@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Terminal } from 'lucide-react';
+import data from '@/data/config.json';
 
 export default function Header() {
   return (
@@ -16,8 +17,8 @@ export default function Header() {
             />
           </div>
           <span className="font-bold text-lg hidden sm:inline-block tracking-tight text-white uppercase">
-            Gleyson
-            <span className="text-blue-500 ml-1">Ribeiro</span>
+            {data.perfil.primeiroNome}
+            <span className="text-blue-500 ml-1">{data.perfil.sobrenome}</span>
           </span>
         </Link>
 

@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from 'react';
 import { Download, Briefcase, GraduationCap, Code2, User, CheckCircle2, MapPin, Mail, Phone } from 'lucide-react';
+import data from '@/data/config.json';
 
 export default function Curriculo() {
   const [mounted, setMounted] = useState(false);
 
-  // Corrige o erro de Hydration garantindo que o componente foi montado no cliente
   useEffect(() => {
     setMounted(true);
   }, []);

@@ -2,6 +2,7 @@ import { Download, Github, ArrowRight, Code, Database, Layout as LayoutIcon } fr
 import Link from 'next/link';
 import NextImage from 'next/image';
 import fotoPerfil from '../../public/images/foto-perfil.jpg';
+import data from '@/data/config.json';
 
 export default function Home() {
   return (
@@ -21,31 +22,22 @@ export default function Home() {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tighter leading-none">
-            Bacharel em <br />
-            <span className="text-blue-500">Sistemas.</span>
+            {data.perfil.titulo} <br />
+            <span className="text-blue-500"></span>
           </h1>
           
           <p className="text-lg text-slate-400 max-w-xl leading-relaxed">
-            Especialista em transformar processos operacionais em soluções digitais eficientes. 
-            Com bagagem como <strong>Supervisor Operacional</strong>, uno a visão de gestão à 
-            engenharia de software para construir sistemas robustos e escaláveis.
+            {data.perfil.resumo}
           </p>
 
           <div className="flex flex-wrap gap-4 pt-4">
-            <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl font-bold transition-all shadow-lg shadow-blue-600/20">
-              <Download size={20} />
-              Download CV
-            </button>
-            <Link href="https://github.com/GleysonRibeiro" target="_blank" className="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-white px-6 py-3 rounded-xl font-bold transition-all border border-slate-700">
-              <Github size={20} />
-              GitHub
-            </Link>
+            {/*espaço para o botão de download do currículo, caso queira adicionar futuramente */}
           </div>
         </div>
 
        {/* Lado Direito: Foto/Card */}
         <div className="lg:col-span-5 relative group">
-          {/* Efeito de brilho (Glow) de fundo */}
+          
           <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
           
           {/* Container da Imagem */}
@@ -67,29 +59,31 @@ export default function Home() {
       <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="md:col-span-2 bg-slate-900/40 border border-slate-800 p-8 rounded-3xl space-y-4">
           <div className="flex items-center gap-3 text-blue-500 font-bold uppercase text-xs tracking-widest">
-            <Code size={16} /> Resumo Profissional
+            <Code size={16} /> Stack
           </div>
           <h2 className="text-2xl font-bold text-white">Engenharia de Software & Gestão</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
-            Minha trajetória é marcada pela dualidade entre a técnica e a operação. 
-            Como Bacharel em Sistemas, domino linguagens como <strong>Python, Java e JavaScript</strong>. 
-            Minha experiência como supervisor me deu o "olhar de dono" necessário para 
-            garantir que cada linha de código gere valor real para o negócio.
+            {data.stack.Resumo}
           </p>
           <div className="flex flex-wrap gap-2 pt-2">
-            {['React', 'Next.js', 'Node.js', 'PostgreSQL', 'Python', 'Spring'].map((tech) => (
-              <span key={tech} className="px-3 py-1 bg-slate-800 rounded-lg text-xs text-slate-300 border border-slate-700">
-                {tech}
-              </span>
-            ))}
+            {Object.keys(data.stack)
+              .filter((key) => key !== "Resumo")
+              .map((tech) => (
+                <span
+                  key={tech}
+                  className="px-3 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-lg text-xs font-medium hover:bg-blue-500/20 hover:border-blue-500/40 transition-all duration-300 cursor-default shadow-[0_0_15px_rgba(59,130,246,0.1)]"
+                >
+                  {tech}
+                </span>
+              ))}
           </div>
         </div>
 
         <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-8 rounded-3xl flex flex-col justify-between group cursor-pointer">
           <div className="text-white/80 text-sm font-medium">Tem um projeto em mente?</div>
           <div className="space-y-2">
-            <h3 className="text-2xl font-bold text-white">Vamos construir algo incrível.</h3>
-            <ArrowRight className="text-white group-hover:translate-x-2 transition-transform" />
+            <h3 className="text-2xl font-bold text-white">Vamos transformar sua visão em uma solução robusta, onde a precisão do código encontra a eficiência da vida real.</h3>
+            
           </div>
         </div>
       </section>

@@ -1,0 +1,45 @@
+{
+  "perfil": {
+    "nome": "Gleyson Barcelos Ribeiro",
+    "titulo": "Profissional de Tecnologia | Desenvolvedor de Software",
+    "email": "ribeiro.gleyson@gmail.com",
+    "cidade": "Campos dos Goytacazes, RJ",
+    "primeiroNome": "Gleyson",
+    "sobrenome": "Ribeiro",
+    "fotoPerfil": "../../public/images/foto-perfil.jpg",
+    "resumo": "Sou um profissional de tecnologia apaixonado por desenvolvimento de software, com experiência em diversas linguagens e frameworks. Tenho um histórico profissional em áreas de gestão operacional e de pessoas. Atualmente trabalhando com desenvolvimento de software de forma independente. Estou sempre buscando aprender novas tecnologias e aprimorar minhas habilidades para criar soluções inovadoras e eficientes."
+  },
+  "stack": {
+      "Resumo": "Formado em Bacharelado em Sistemas de Informação, e com uma carreira consistente na área administrativa e operacional, desenvolvo projetos independentes para aprimoramento profissional e conhecimento de novas tecnologias.",
+      "JavaScript": "JavaScript",
+      "TypeScript": "TypeScript",
+      "React": "React",
+      "Next.js": "Next.js",
+      "Node.js": "Node.js",
+      "Express": "Express",
+      "MongoDB": "MongoDB",
+      "SQL": "SQL",
+      "Git": "Git",
+      "Resolução de Problemas": "Resolução de Problemas",
+      "Trabalho em Equipe": "Trabalho em Equipe",
+      "Comunicação": "Comunicação",
+      "Gestão de Projetos": "Gestão de Projetos",
+      "Liderança": "Liderança",
+      "Spring": "Spring Framework",
+      "Python": "Python",
+      "Java": "Java",
+      "Buble.io": "Buble.io",
+      "n8n": "n8n"
+    },
+    "projetos": [
+    {
+      "titulo": "Portfólio Profissional",
+      "descricao": "Desenvolvimento de uma landing page para centralizar minha trajetória profissional e projetos de Software que desenvolvi. Focado em performance, SEO e acessibilidade.",
+      "tech": ["Next.js 16", "Tailwind CSS", "TypeScript", "Lucide Icons"],
+      "github": "https://github.com/GleysonRibeiro/portfolio",
+      "demo": "/",
+      "imagem": "../../../public/images/projetos/portfolio.png"
+    }
+  ]  
+}
+

@@ -1,6 +1,7 @@
 'use client';
 import {Github, Linkedin, MessageCircle, Mail, Phone} from 'lucide-react';
 import { useEffect, useState } from 'react';
+import data from '@/data/config.json';
 
 export default function Footer() {
   const [year, setYear] = useState<number | string>('...');
@@ -16,9 +17,9 @@ export default function Footer() {
   
         {/* Coluna 1: Bio Rápida (Ocupa 6 de 12 colunas = ~66%) */}
         <div className="md:col-span-6 space-y-4">
-          <div className="font-bold text-white text-lg uppercase tracking-tight">Gleyson Ribeiro</div>
-            <p className="text-sm text-slate-400 leading-relaxed max-w-2xl"> {/* Aumentei o max-w para o texto fluir */}
-              Bacharel em Sistemas de Informação, com conhecimentos em desenvolvimento de software nas linguagens Python, Java, JavaScript e C, além do uso do framework Spring, plataformas no code como Bubble.io, integração de sistemas, automação e lógica de programação. Perfil analítico, visão de processos, comunicação clara e foco contínuo na solução de problemas.
+          <div className="font-bold text-white text-lg uppercase tracking-tight">{data.perfil.nome}</div>
+            <p className="text-sm text-slate-400 leading-relaxed max-w-2xl">
+              {data.perfil.resumo}
             </p>
         </div>
 
