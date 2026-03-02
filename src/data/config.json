@@ -7,7 +7,11 @@
     "primeiroNome": "Gleyson",
     "sobrenome": "Ribeiro",
     "fotoPerfil": "../../public/images/foto-perfil.jpg",
-    "resumo": "Sou um profissional de tecnologia apaixonado por desenvolvimento de software, com experiência em diversas linguagens e frameworks. Tenho um histórico profissional em áreas de gestão operacional e de pessoas. Atualmente trabalhando com desenvolvimento de software de forma independente. Estou sempre buscando aprender novas tecnologias e aprimorar minhas habilidades para criar soluções inovadoras e eficientes."
+    "resumo": "Sou um profissional de tecnologia apaixonado por desenvolvimento de software, com experiência em diversas linguagens e frameworks. Tenho um histórico profissional em áreas de gestão operacional e de pessoas. Atualmente trabalhando com desenvolvimento de software de forma independente. Estou sempre buscando aprender novas tecnologias e aprimorar minhas habilidades para criar soluções inovadoras e eficientes.",
+    "telefone": "(22) 99766-0134",
+    "linkedin": "https://www.linkedin.com/in/gleyson-barcelos-ribeiro-97046954/",
+    "github": "https://github.com/GleysonRibeiro",
+    "Whatsapp": "https://wa.me/5522997660134"
   },
   "stack": {
       "Resumo": "Formado em Bacharelado em Sistemas de Informação, e com uma carreira consistente na área administrativa e operacional, desenvolvo projetos independentes para aprimoramento profissional e conhecimento de novas tecnologias.",
@@ -40,6 +44,89 @@
       "demo": "/",
       "imagem": "../../../public/images/projetos/portfolio.png"
     }
-  ]  
+  ],
+  "curriculo": {
+    "experiencias": [
+      {
+        "cargo": "Supervisor de Operações",
+        "empresa": "Auto Viação 1001 Ltda",
+        "periodo": "2022 — Atual",
+        "descricao": "Gestão estratégica de contratos de fretamento e linhas rodoviárias. Supervisão de equipe (150+ colaboradores), planejamento de frota e pessoal.",
+        "tags": ["Gestão de Pessoas", "Power BI", "KPIs", "Gestão de Contratos"]
+      },
+      {
+        "cargo": "Encarregado Administrativo",
+        "empresa": "Auto Viação 1001 Ltda",
+        "periodo": "2018 — 2022",
+        "descricao": "Gestão de contratos de fretamentos corporativos e linhas rodoviárias intermunicipais e supervisão da equipe de trabalho nas tarefas de planejamento de frota e pessoal para atendimento as demandas.",
+        "tags": ["Gestão de Contratos", "Planejamento", "Excel", "Liderança", "Power BI"]
+      },
+      {
+        "cargo": "Encarregado Financeiro",
+        "empresa": "Auto Viação 1001 Ltda",
+        "periodo": "2013 — 2018",
+        "descricao": "Supervisão de equipes de arrecadação e administrativa. Foco em controle financeiro, planejamento de força de trabalho e indicadores de desempenho.",
+        "tags": ["Financeiro", "Planejamento", "Excel", "Liderança"]
+      },
+      {
+        "cargo": "Analista de Suporte",
+        "empresa": "Indra",
+        "periodo": "2015 — 2017",
+        "descricao": "Suporte técnico Help Desk (Nível 1 e 2) focado em ambientes corporativos, incluindo SAP e infraestrutura Windows.",
+        "tags": ["SAP", "Help Desk", "Windows", "Suporte Técnico"]
+      },
+      {
+        "cargo": "Agente de Atendimento",
+        "empresa": "CTIS",
+        "periodo": "2011 — 2013",
+        "descricao": "Suporte técnico na área de telecomunicações, lidando com chamadas ativas/receptivas e resolução de problemas sistêmicos.",
+        "tags": ["Telecom", "Atendimento", "TI"]
+      },
+      {
+        "cargo": "Assistente Operacional",
+        "empresa": "Auto Viação 1001 Ltda",
+        "periodo": "2010 — 2013",
+        "descricao": "Elaboração de escalas de trabalho de motoristas de transporte rodoviário intermunicipal. Controle de jornada, planejamento de viagens e gestão de pessoal.",
+        "tags": ["Escalas", "Operacional", "Logística"]
+      },
+      {
+        "cargo": "Auxiliar Operacional",
+        "empresa": "Auto Viação 1001 Ltda",
+        "periodo": "2008 — 2010",
+        "descricao": "Liberação de motoristas e ônibus para realização de viagens intermunicipais.",
+        "tags": ["Escalas", "Operacional", "Logística"]
+      },
+      {
+        "cargo": "Auxiliar Administrativo",
+        "empresa": "Auto Viação 1001 Ltda",
+        "periodo": "2007 — 2008",
+        "descricao": "Conferência e prestação de contas de vendas realizadas durante viagens de ônibus intermunicipais.",
+        "tags": ["Excel", "Financeiro", "Transporte Rodoviário"]
+      }
+    ],
+    "habilidades": {
+      "linguagens": ["Python", "Java", "Javascript", "C", "Spring Framework"],
+      "noCode": ["Bubble.io", "AppSheet", "n8n"],
+      "banco": ["SQL"],
+      "ferramentas": ["Git/GitHub", "Google Colab", "VS Code"],
+      "metodologias": ["Scrum", "Kanban"],
+      "sistemas": ["Windows", "SAP", "Redes"],
+      "outros": ["Lógica", "Integrações", "Prototipagem"]
+    },
+    "formacao": [
+      {
+        "curso": "Bacharelado em Sistemas de Informação",
+        "instituicao": "IFF - Instituto Federal Fluminense",
+        "periodo": "2018 — 2025",
+        "detalhes": "Tecnologia da Informação"
+      },
+      {
+        "curso": "Ensino Médio",
+        "instituicao": "Colegio Estadual Nilo Peçanha",
+        "periodo": "2003 — 2007",
+        "detalhes": ""
+      }
+    ]
+  }  
 }
 

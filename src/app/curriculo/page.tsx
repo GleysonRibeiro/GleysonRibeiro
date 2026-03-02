@@ -29,12 +29,12 @@ export default function Curriculo() {
       {/* Cabeçalho */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-slate-800 pb-8 gap-4">
         <div>
-          <h1 className="text-4xl font-bold text-white uppercase tracking-tighter">Gleyson Barcelos Ribeiro</h1>
-          <p className="text-blue-500 font-medium text-lg mt-1">Bacharel em Sistemas de Informação | Supervisor Operacional</p>
+          <h1 className="text-4xl font-bold text-white uppercase tracking-tighter">{data.perfil.nome}</h1>
+          <p className="text-blue-500 font-medium text-lg mt-1">{data.perfil.titulo}</p>
           <div className="flex flex-wrap gap-4 mt-4 text-sm text-slate-400">
-            <span className="flex items-center gap-1"><MapPin size={14} /> Campos dos Goytacazes, RJ</span>
-            <span className="flex items-center gap-1"><Mail size={14} /> ribeiro.gleyson@gmail.com</span>
-            <span className="flex items-center gap-1"><Phone size={14} /> (22) 99766-0134</span>
+            <span className="flex items-center gap-1"><MapPin size={14} /> {data.perfil.cidade}</span>
+            <span className="flex items-center gap-1"><Mail size={14} /> {data.perfil.email}</span>
+            <span className="flex items-center gap-1"><Phone size={14} />{data.perfil.telefone}</span>
           </div>
         </div>
         <button 
@@ -51,9 +51,7 @@ export default function Curriculo() {
           <User className="text-blue-500" size={22} /> Resumo Profissional
         </h2>
         <p className="text-slate-400 leading-relaxed text-justify">
-          Profissional com sólida trajetória no setor de transportes, evoluindo de funções operacionais até a posição de <strong>Supervisor Operacional</strong>[cite: 13, 15]. 
-          Expertise na gestão de equipes multidisciplinares e administração de contratos de fretamento[cite: 15]. Atualmente, uno a experiência 
-          de gestão com a tecnologia para desenvolver soluções eficientes e automações de processos[cite: 19].
+          {data.stack.Resumo}
         </p>
       </section>
 
@@ -64,7 +62,7 @@ export default function Curriculo() {
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {Object.entries(competências).map(([categoria, itens]) => (
+          {Object.entries(data.curriculo.habilidades).map(([categoria, itens]) => (
             <div key={categoria} className="space-y-3">
               <h3 className="text-xs font-bold text-slate-500 uppercase tracking-widest border-l-2 border-blue-500 pl-2">
                 {categoria.replace('noCode', 'Plataformas No/Low-Code').replace('ferramentas', 'Ambientes').replace('banco', 'Dados')}
@@ -88,22 +86,39 @@ export default function Curriculo() {
         </h2>
         
         <div className="space-y-8 border-l-2 border-slate-800 ml-3 pl-6">
-          <div className="relative">
-            <div className="absolute -left-[31px] top-1 w-4 h-4 bg-blue-600 rounded-full border-4 border-[#0a0c10]"></div>
-            <h3 className="text-lg font-bold text-white leading-none">Supervisor de Operações / Encarregado Administrativo</h3>
-            <p className="text-blue-400 text-sm font-semibold mt-1">Auto Viação 1001 Ltda | 2018 — Atual [cite: 21, 23, 27]</p>
-            <ul className="text-slate-400 text-sm mt-3 space-y-2">
-              <li className="flex gap-2"><CheckCircle2 size={14} className="text-blue-500 shrink-0 mt-1" /> Gestão de contratos de fretamento e supervisão de equipe (planejamento de frota e pessoal)[cite: 25, 28].</li>
-              <li className="flex gap-2"><CheckCircle2 size={14} className="text-blue-500 shrink-0 mt-1" /> Coordenação de aproximadamente 150 colaboradores[cite: 15].</li>
-            </ul>
-          </div>
+          {data.curriculo.experiencias.map((exp, index) => {
+            const isAtual = exp.periodo.includes("Atual");
+            
+            return (
+              <div key={index} className="relative">
+                {/* Indicador na Timeline */}
+                <div className={`absolute -left-[31px] top-1 w-4 h-4 rounded-full border-4 border-[#0a0c10] ${
+                  isAtual ? "bg-blue-600" : "bg-slate-700"
+                }`}></div>
+                
+                <h3 className="text-lg font-bold text-white leading-none">
+                  {exp.cargo}
+                </h3>
+                
+                <p className={`${isAtual ? "text-blue-400" : "text-slate-500"} text-sm font-semibold mt-1`}>
+                  {exp.empresa} | {exp.periodo}
+                </p>
+                
+                <p className="text-slate-400 text-sm mt-3 leading-relaxed">
+                  {exp.descricao}
+                </p>
 
-          <div className="relative">
-            <div className="absolute -left-[31px] top-1 w-4 h-4 bg-slate-700 rounded-full border-4 border-[#0a0c10]"></div>
-            <h3 className="text-lg font-bold text-white leading-none">Analista de Suporte</h3>
-            <p className="text-slate-500 text-sm font-semibold mt-1">Indra | 2015 — 2017 [cite: 34, 36]</p>
-            <p className="text-slate-400 text-sm mt-2">Atendimento Help desk para Windows, SAP e Lotus Notes[cite: 38, 39].</p>
-          </div>
+                {/* Tags de Competências da Experiência */}
+                <div className="flex flex-wrap gap-2 mt-3">
+                  {exp.tags?.map((tag) => (
+                    <span key={tag} className="text-[10px] uppercase tracking-widest font-bold px-2 py-0.5 bg-slate-800 text-slate-500 rounded">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
@@ -112,12 +127,33 @@ export default function Curriculo() {
         <h2 className="text-xl font-bold text-white flex items-center gap-2">
           <GraduationCap className="text-blue-500" size={22} /> Formação Acadêmica
         </h2>
-        <div className="bg-[#0d1117] border border-slate-800 p-6 rounded-2xl flex justify-between items-center group">
-          <div>
-            <h3 className="text-white font-bold text-lg">Bacharelado em Sistemas de Informação</h3>
-            <p className="text-slate-400">IFF - Instituto Federal Fluminense [cite: 63, 64]</p>
-          </div>
-          <span className="text-blue-500 font-bold bg-blue-500/10 px-4 py-1 rounded-full text-xs">2018 — 2025 [cite: 65]</span>
+        
+        <div className="space-y-4">
+          {data.curriculo.formacao.map((item, index) => (
+            <div 
+              key={index} 
+              className="bg-[#0d1117] border border-slate-800 p-6 rounded-2xl flex flex-col md:flex-row md:justify-between md:items-center group hover:border-blue-500/30 transition-all duration-300 gap-4"
+            >
+              <div>
+                <h3 className="text-white font-bold text-lg group-hover:text-blue-400 transition-colors">
+                  {item.curso}
+                </h3>
+                <p className="text-slate-400">
+                  {item.instituicao}
+                </p>
+                {item.detalhes && (
+                  <p className="text-slate-500 text-xs mt-1 uppercase tracking-widest font-medium">
+                    {item.detalhes}
+                  </p>
+                )}
+              </div>
+              <div className="shrink-0 w-fit">
+                <span className="text-blue-500 font-bold bg-blue-500/10 px-4 py-1 rounded-full text-xs">
+                  {item.periodo}
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
